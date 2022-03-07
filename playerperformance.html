@@ -1,0 +1,147 @@
+
+   
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="player.js"></script>
+    <title>Report</title>
+    
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background-color:blueviolet;
+        }
+        .navbar{
+            display: flex;
+            justify-content: space-around;
+        }
+        #MenuItems{
+            display: flex;
+            justify-content:space-around;
+            padding: 50px;
+            list-style: none;
+        }
+        .s{
+            padding: 50px;
+        }
+        li{
+            height: 50px;
+            width: 100px;
+        }
+        table,
+        th,
+        td {
+            border: 5px solid rgb(4, 241, 222);
+            border-collapse: collapse;
+            color:bisque;
+            text-align: center;
+        }
+
+        th,
+        td {
+            padding: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="logo">
+            <a href="index.html"><img src="image/img/ipl.jpg" width="200px" height="100px"></a>
+        </div>
+        <div class="s">
+            <input type="text" name="" placeholder="search" id="myInput" onkeyup="myFunction()">
+        </div>
+            <ul id="MenuItems">
+                <li><a href="index.html" class="btn">MENU</a></li>
+                <li><a href="Team.html" class="btn">TEAM</a></li>
+                <li><a href="News.html" class="btn">NEWS</a></li>
+                <li><a href="playerperformance.html" class="btn">PLAYER PERFOMANCE</a></li>
+                <li><a href="addteam.html" class="btn">ADD TEAM DETAILS</a></li>
+            </ul>
+    </div>
+    <div class="container">
+        <table id="myTable">
+            <thead>
+                <tr>
+                    <th>Sl.No</th>
+                    <th>Player Name</th>
+                    <th>Total Match Played</th>
+                    <th>Total Run</th>
+                    <th>Boundries</th>
+                    <th>Hlaf Centuries</th>
+                    <th>Centuries</th>
+                    <th>Highest Score</th>
+                    <th>Average</th>
+                    <th>Total Over</th>
+                    <th>Wickets</th>
+                    <th>Best Bowwling</th>
+                </tr>
+            </thead>
+            <tbody id="table">
+
+            </tbody>
+            <script>
+                let table = document.getElementById("table");
+                let element1 = "";
+                let i = 0;
+                player.forEach(element => {
+
+                    element1 += `
+             <tr>
+               <td >${element.id}</td>
+               <td>${element.P_Name}</td>
+               <td>${element.total_match}</td>
+               <td>${element.total_run}</td>
+               <td>${element.boundries}</td>
+               <td>${element.half_centuries}</td>
+               <td>${element.centuries}</td>
+               <td>${element.highest_score}</td>
+               <td>${element.total_run}</td>
+               <td>${element.over_bowled}</td>
+               <td>${element.wickets}</td>
+               <td>${element.best_bowling}</td>
+             </tr>
+            
+            `
+                    table.innerHTML = element1;
+
+                });
+            </script>
+        </table>
+
+    </div>
+    <script>
+        function myFunction() {
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById("myInput");
+            filter = input.value.toUpperCase();
+            
+            table = document.getElementById("myTable");
+            tr = table.getElementsByTagName("tr");
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[1];
+                console.log(tr[0]);
+                if (td) {
+                    txtValue = td.textContent || td.innerText;
+                    console.log(txtValue);
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

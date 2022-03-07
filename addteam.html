@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>addteamdetails</title>
+        <style>
+            body{
+                height: 100vh;
+                
+            }
+            form{
+                text-align: center;
+                color:green;
+                font--size:30px;
+                font-family: verdana, geneve, tahoma, sans-serif;
+                color:rgb(202, 22, 67);
+                background-color: cadetblue;
+            }
+            input[type=submit]{
+                padding: 10px;
+                font-size: 30px;
+                width:200px;
+                color:yellow;
+                background-color: blue;
+            }
+            select{
+                font-size:12px;
+                padding:5px;
+                background:rgb(15, 158, 194)
+            }
+            #MenuItems{
+                display: flex;
+                justify-content:space-between;
+            }
+            ul,li{
+                list-style: none;
+               
+            }
+            ul,li,a{
+                text-decoration: none;
+                text-transform: uppercase;
+                padding: .5 0 0 0;
+            }
+            .nav{
+                width: 100%;
+                height: 50px;
+                background-color: aqua;
+            }
+        </style>
+   
+</head>
+<body>
+    <nav class="nav">
+        <ul id="MenuItems">
+            <li><a href="index.html" class="btn">MENU</a></li>
+            <li><a href="Team.html"class="btn">TEAM</a></li>
+            <li><a href="News.html"class="btn">NEWS</a></li>
+            <li><a href="playerperformance.html"class="btn">PLAYERS DETAILS</a></li>
+            <li><a href="addteam.html"class="btn">ADD TEAM DETAILS</a></li>
+        </ul>
+    </nav>
+    <div class="team">
+
+        <form id="form">
+            <label>Name of the team: </label><br>
+            <input type="text" name="search" placeholder="team name" value=""><br>
+            <label>Team icon: </label><br>
+            <select>
+                <option>Team_name</option>
+                <option>CSK</option>
+                <option>MI</option>
+                <option>RR</option>
+                <option>KKR</option>
+                <option>RCB</option>
+                <option>DC</option>
+                <option>GL</option>
+                <option>SRH</option>
+            </select>
+            <br>
+            <label>Player count: </label><br>
+            <input type="text" name="search2" placeholder="number" value=""><br>
+            <label>Top batsman: </label><br>
+            <input type="text" name="search3"  value=""><br>
+            <label>top bowler: </label><br>
+            <input type="text" name="search4"  value=""><br>
+            <label>Championship won count: </label><br>
+            <input type="text" name="search5"  value=""><br>
+            <label>Submit: </label><br>
+            <input type="submit" value="submit"><br>
+        </form>
+        
+    </div>
+
+</body>
+</html>
